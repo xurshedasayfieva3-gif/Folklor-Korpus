@@ -1,0 +1,215 @@
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* BODY */
+body{
+font-family:'Segoe UI',sans-serif;
+color:white;
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1a3c6e);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+min-height:100vh;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* HEADER */
+header{
+text-align:center;
+padding:30px 10px;
+font-size:28px;
+font-weight:700;
+letter-spacing:2px;
+text-shadow:0 0 10px rgba(255,255,255,0.3);
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+padding:10px;
+}
+
+.navbar button{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.2);
+color:white;
+padding:10px 16px;
+border-radius:25px;
+cursor:pointer;
+backdrop-filter:blur(8px);
+transition:all 0.3s ease;
+}
+
+.navbar button:hover{
+background:white;
+color:#1a3c6e;
+transform:translateY(-2px) scale(1.05);
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* SEARCH */
+.searchBox{
+text-align:center;
+margin:20px;
+}
+
+.searchBox input{
+padding:12px 15px;
+width:260px;
+border-radius:25px;
+border:none;
+outline:none;
+background:rgba(255,255,255,0.15);
+color:white;
+backdrop-filter:blur(10px);
+}
+
+.searchBox input::placeholder{
+color:#ddd;
+}
+
+/* SECTIONS */
+.section{
+display:none;
+padding:25px;
+max-width:900px;
+margin:auto;
+animation:fadeIn 0.4s ease;
+}
+
+.active{display:block}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(15px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+/* INFO BOX */
+.infoBox{
+background:rgba(255,255,255,0.08);
+padding:15px;
+border-radius:15px;
+margin-bottom:15px;
+line-height:1.6;
+border-left:4px solid #ffcc00;
+}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.12);
+padding:15px 18px;
+margin:12px 0;
+border-radius:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(12px);
+transition:all 0.3s ease;
+}
+
+.card:hover{
+transform:scale(1.04);
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* DELETE BUTTON */
+.deleteBtn{
+background:linear-gradient(45deg,#ff4d4d,#ff0000);
+border:none;
+padding:6px 10px;
+border-radius:10px;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.deleteBtn:hover{
+transform:scale(1.1);
+}
+
+/* FLOAT BUTTON */
+.fab{
+position:fixed;
+bottom:20px;
+right:20px;
+background:linear-gradient(45deg,#ffcc00,#ffaa00);
+color:black;
+border:none;
+padding:16px;
+border-radius:50%;
+font-size:22px;
+cursor:pointer;
+box-shadow:0 0 20px rgba(255,200,0,0.6);
+transition:0.3s;
+}
+
+.fab:hover{
+transform:scale(1.1) rotate(10deg);
+}
+
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center;
+}
+
+.modalContent{
+background:white;
+color:black;
+padding:25px;
+border-radius:20px;
+width:320px;
+animation:pop 0.3s ease;
+}
+
+@keyframes pop{
+from{transform:scale(0.7);opacity:0}
+to{transform:scale(1);opacity:1}
+}
+
+.modal input, .modal select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+.modal button{
+padding:10px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-top:5px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+.searchBox input{
+width:90%;
+}
+
+.card{
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+}
+}
